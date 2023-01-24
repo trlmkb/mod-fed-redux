@@ -46,11 +46,13 @@ body {
   padding: 4rem 6rem;
   color: #fff;
 }
-.mf-wrap:hover {
-  outline: 10px dashed cyan;
-}
-.mf-wrap:hover .mf-wrap:hover {
-  outline: 10px dashed yellow;
+@media screen and (min-width: 769px) {
+  .mf-wrap:hover {
+    outline: 10px dashed cyan;
+  }
+  .mf-wrap:hover .mf-wrap:hover {
+    outline: 10px dashed yellow;
+  }
 }
 .mf-wrap .mf-wrap.header {
   border-radius: 0;
@@ -149,6 +151,7 @@ body {
   position: absolute;
 }
 .button {
+  user-select: none;
   cursor: pointer;
   font: inherit;
   background: none;
@@ -298,5 +301,56 @@ body {
   100% {
     /* opacity: 1; */
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 1rem;
+  }
+  .mf-wrap, .count-wrapper, .count {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .mf-wrap:not(.header) {
+    padding: 1rem;
+  }
+  .mf-wrap legend {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  .mf-wrap legend .mf {
+    font-size: 1.6rem;
+  }
+  .mf-wrap.header legend .mf {
+    font-size: 1.4rem;
+  }
+  .mf-wrap .mf-wrap.header {
+    margin: 4rem calc(-1rem - 1px) 4rem
+  }
+  .header {
+    padding: 2rem;
+  }
+  .count-text {
+    writing-mode: initial;
+    transform: none;
+  }
+  .count-actions-wrap {
+    margin: auto;
+    width: 80%;
+  }
+  .count-wrapper {
+    padding: 0;
+  }
+  .button--icon {
+    max-width: none;
+  }
+  .count-number {
+    min-width: none;
+    text-align: center;
+  }
+  .plus {
+    width: 10vmax;
+    height: 10vmax;
   }
 }
