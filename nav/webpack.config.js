@@ -45,7 +45,7 @@ module.exports = {
       name: "nav",
       filename: "remoteEntry.js",
       remotes: {
-        store: `store@/nav/remoteEntry.js`,
+        store: `store@${host}/nav/remoteEntry.js`,
       },
       exposes: {
         "./Header": "./src/Header",
