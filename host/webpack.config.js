@@ -48,8 +48,8 @@ module.exports = (env) => {
         name: "host",
         filename: "remoteEntry.js",
         remotes: {
-          store: `store@/store/dist/remoteEntry.js`,
-          nav: `nav@/nav/dist/remoteEntry.js`,
+          store: `store@/dist/store/remoteEntry.js`,
+          nav: `nav@/dist/nav/remoteEntry.js`,
         },
         shared: {
           ...deps,
