@@ -12,7 +12,8 @@
     "start": "concurrently 'cd ./host && npm start' 'cd ./nav && npm start' 'cd ./store && npm start'",
     "build": "concurrently 'cd ./host && npm run build' 'cd ./nav && npm run build' 'cd ./store && npm run build'",
     "serve": "concurrently 'cd ./host && npm run build:start' 'cd ./nav && npm run build:start' 'cd ./store && npm run build:start'",
-    "clean": "concurrently 'cd ./host && npm run clean' 'cd ./nav && npm run clean' 'cd ./store && npm run clean'"
+    "clean": "concurrently 'cd ./host && npm run clean' 'cd ./nav && npm run clean' 'cd ./store && npm run clean'",
+    "bootstrap": "concurrently 'cd ./host && npm install' 'cd ./nav && npm install' 'cd ./store && npm install'"
   },
   "devDependencies": {
     "concurrently": "7.2.1"
