@@ -5,7 +5,7 @@ const deps = require("./package.json").dependencies;
 const host = "https://mfr.jurele.lt";
 module.exports = {
   output: {
-    publicPath: `${host}:3002/`,
+    publicPath: `${host}/store/`,
   },
 
   resolve: {

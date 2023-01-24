@@ -8,7 +8,7 @@ module.exports = (env) => {
   const host = "https://mfr.jurele.lt";
   return {
     output: {
-      publicPath: `${host}:3000/`,
+      publicPath: `${host}`,
     },
 
     resolve: {
