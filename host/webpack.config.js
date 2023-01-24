@@ -4,7 +4,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = (env) => {
   console.log(env);
-  const host = env === 'development' ? "http://localhost" : "https://mfr.jurele.lt";
+  // const host = env && env === 'development' ? "http://localhost" : "https://mfr.jurele.lt";
+  const host = "http://mfr.jurele.lt";
   return {
     output: {
       publicPath: `${host}:3000/`,
@@ -47,8 +48,8 @@ module.exports = (env) => {
         name: "host",
         filename: "remoteEntry.js",
         remotes: {
-          store: `store@${host}:3002/remoteEntry.js`,
-          nav: `nav@${host}:3002/remoteEntry.js`,
+          store: `store@/store/dist/remoteEntry.js`,
+          nav: `nav@/nav/dist/remoteEntry.js`,
         },
         shared: {
           ...deps,

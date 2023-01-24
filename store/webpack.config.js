@@ -2,9 +2,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
+const host = "http://mfr.jurele.lt";
 module.exports = {
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath: `${host}:3002/`,
   },
 
   resolve: {

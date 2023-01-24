@@ -2,9 +2,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
+const host = "http://mfr.jurele.lt";
 module.exports = {
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: `${host}:3001/`,
   },
 
   resolve: {
@@ -44,7 +45,7 @@ module.exports = {
       name: "nav",
       filename: "remoteEntry.js",
       remotes: {
-        store: "store@http://localhost:3002/remoteEntry.js",
+        store: `store@/nav/dist/remoteEntry.js`,
       },
       exposes: {
         "./Header": "./src/Header",
