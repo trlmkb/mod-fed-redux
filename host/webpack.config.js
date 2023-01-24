@@ -5,7 +5,7 @@ const deps = require("./package.json").dependencies;
 module.exports = (env) => {
   console.log(env);
   // const host = env && env === 'development' ? "http://localhost" : "https://mfr.jurele.lt";
-  const host = "http://mfr.jurele.lt";
+  const host = "https://mfr.jurele.lt";
   return {
     output: {
       publicPath: `${host}:3000/`,
