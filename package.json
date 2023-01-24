@@ -11,9 +11,10 @@
   "scripts": {
     "start": "concurrently 'cd ./host && npm start' 'cd ./nav && npm start' 'cd ./store && npm start'",
     "build": "concurrently 'cd ./host && npm run build' 'cd ./nav && npm run build' 'cd ./store && npm run build'",
-    "serve": "concurrently 'cd ./host && npm run build:start' 'cd ./nav && npm run build:start' 'cd ./store && npm run build:start'",
-    "clean": "concurrently 'cd ./host && npm run clean' 'cd ./nav && npm run clean' 'cd ./store && npm run clean'",
-    "bootstrap": "concurrently 'cd ./host && npm install' 'cd ./nav && npm install' 'cd ./store && npm install'"
+    "serve": "concurrently 'cd ./dist && PORT=3000 npx serve' 'cd ./dist/nav && PORT=3001 npx serve' 'cd ./dist/store && PORT=3002 npx serve'",
+    "postbuild": "cp host/dist/* dist && cp nav/dist/* dist/nav && cp store/dist/* dist/store",
+    "bootstrap": "concurrently 'cd ./host && npm install' 'cd ./nav && npm install' 'cd ./store && npm install'",
+    "deploy": "npm run build && npm run postbuild && npm run serve"
   },
   "devDependencies": {
     "concurrently": "7.2.1"
